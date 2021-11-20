@@ -13,11 +13,6 @@
                      Clicked="btnVetRegistration_Clicked">
         </ToolbarItem>
 
-        <ToolbarItem x:Name="user_list_toolbar"
-                     Text="Admin"
-                     Clicked="btnUserList_Clicked">
-        </ToolbarItem>
-
         <ToolbarItem x:Name="logout_toolbar"
                      Text="Logout"
                      Clicked="btnLogout_Clicked">

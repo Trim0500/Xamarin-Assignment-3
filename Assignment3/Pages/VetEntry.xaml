@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Assignment3.Pages.VetEntry">
+    <ContentPage.Content>
+        <StackLayout Padding="20"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+            <Label x:Name="vet_entry_lbl" Text="Vet Entry"
+                   FontSize="Large"/>
+
+            <Entry x:Name="vet_id_edit"
+                   Placeholder="Enter the vet id (update)"/>
+            
+            <Entry x:Name="fName_edit"
+                   Placeholder="Enter your first name"/>
+
+            <Entry x:Name="lName_edit"
+                   Placeholder="Enter your last name"/>
+
+            <Entry x:Name="resume_edit"
+                   Placeholder="Enter your resume"/>
+
+            <Entry x:Name="workdays_edit"
+                   Placeholder="Enter your available workdays"
+                   Keyboard="Email"/>
+
+            <Entry x:Name="specialties_edit"
+                   Placeholder="Enter your specialties"/>
+
+            <Button x:Name="save_btn"
+                    Text="Save"
+                    CornerRadius="15"
+                    Clicked="btnSave_Clicked"/>
+
+            <Button x:Name="back_btn"
+                        Text="Back"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="btnBack_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

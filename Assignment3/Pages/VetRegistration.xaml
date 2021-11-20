@@ -2,11 +2,43 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Assignment3.Pages.VetRegistration">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="add_toolbar"
+                     Text="Add"
+                     Clicked="add_toolbar_Clicked">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <Label x:Name="vet_list_lbl" Text="Vet List"
+                   FontSize="Large"/>
+
+            <CollectionView x:Name="vet_list_view"
+                            ItemsSource="{Binding vets}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Grid Padding="10" RowDefinitions="Auto, *">
+                                <Label Text="{Binding lastName}"  Grid.Row="0" Grid.Column="0" FontSize="Small"/>
+                                <Label Text="{Binding resume}" Grid.Row="0" Grid.Column="1" FontSize="Small"/>
+                                <Label Text="{Binding workdays}" Grid.Row="1" Grid.Column="0" FontSize="Small"/>
+                                <Label Text="{Binding specialties}" Grid.Row="1" Grid.Column="1" FontSize="Small"/>
+                                <Image Source="edit.png" Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer x:Name="edit_tap" Tapped="edit_tap_Tapped" CommandParameter="{Binding key}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Image Source="delete.png" Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" HeightRequest="20" WidthRequest="20">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer x:Name="delete_tap" Tapped="delete_tap_Tapped" CommandParameter="{Binding key}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

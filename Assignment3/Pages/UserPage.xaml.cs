@@ -23,17 +23,14 @@ namespace Assignment3.Pages
             {
                 vet_list_toolbar.IsEnabled = false;
                 pet_list_toolbar.IsEnabled = false;
-                user_list_toolbar.IsEnabled = false;
             }
             else if(user.role == "owner")
             {
                 vet_list_toolbar.IsEnabled = false;
-                user_list_toolbar.IsEnabled = false;
             }
             else if (user.role == "vet")
             {
                 pet_list_toolbar.IsEnabled = false;
-                user_list_toolbar.IsEnabled = false;
             }
         }
 
@@ -50,11 +47,6 @@ namespace Assignment3.Pages
         async void btnVetRegistration_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new VetRegistration());
-        }
-
-        async void btnUserList_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new UserList());
         }
     }
 }
