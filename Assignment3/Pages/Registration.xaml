@@ -3,10 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Assignment3.Pages.Registration">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="20" VerticalOptions="Center">
+                <Label x:Name="lbl_header" Text="Welcome to the Registration Page!"
+                        FontSize="Large"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center" />
+                <Entry x:Name="user_edit"
+                        Placeholder="Username"
+                        FontSize="Large"/>
+                <Entry x:Name="pass_edit"
+                        Placeholder="Password"
+                        FontSize="Large"
+                        IsPassword="True"/>
+                <Entry x:Name="fName_edit"
+                        Placeholder="FirstName"
+                        FontSize="Large"/>
+                <Entry x:Name="lName_edit"
+                        Placeholder="LastName"
+                        FontSize="Large"/>
+                <Entry x:Name="email_edit"
+                        Placeholder="Email"
+                        FontSize="Large"/>
+                <Entry x:Name="phone_edit"
+                        Placeholder="Phone Number"
+                        FontSize="Large"/>
+                <Button x:Name="register_btn"
+                        Text="Register"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="btnRegister_Clicked"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

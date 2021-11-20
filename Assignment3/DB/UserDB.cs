@@ -46,7 +46,12 @@ namespace Assignment3.DB
 
         public async Task<User> ReadById(string key)
         {
-            return (await client.Child(nameof(User) + "/" + key).OnceSingleAsync<User>());
+            return await client.Child(nameof(User) + "/" + key).OnceSingleAsync<User>();
+        }
+
+        public async Task<User> ReadByCredentials(string userName)
+        {
+            return await client.Child(nameof(User) + "/" + userName).OnceSingleAsync<User>();
         }
 
         public async Task<bool> Update(User user)

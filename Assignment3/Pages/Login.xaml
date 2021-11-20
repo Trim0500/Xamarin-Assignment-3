@@ -3,10 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Assignment3.Pages.Login">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="20" VerticalOptions="Center">
+                <Label Text="Welcome to Pet Clinic!"
+                        FontSize="Large"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center" />
+                <Entry x:Name="user_edit"
+                        Placeholder="Username"
+                        FontSize="Large"/>
+                <Entry x:Name="pass_edit"
+                        Placeholder="Password"
+                        FontSize="Large"
+                        IsPassword="True"/>
+                <Button x:Name="login_btn"
+                        Text="Login"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="btnLogin_Clicked"/>
+                <Button x:Name="register_btn"
+                        Text="Register New User"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="btnGoRegister_Clicked"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

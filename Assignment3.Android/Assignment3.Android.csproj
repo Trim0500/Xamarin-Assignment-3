@@ -87,7 +87,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\binky_da_froge.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Assignment3\Assignment3.csproj">
       <Project>{F1B60C20-DE72-4AE3-B1EC-44ECE67059EC}</Project>
