@@ -2,11 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Assignment3.Pages.UserPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="pet_list_toolbar"
+                     Text="Owner"
+                     Clicked="btnPetRegistration_Clicked">
+        </ToolbarItem>
+
+        <ToolbarItem x:Name="vet_list_toolbar"
+                     Text="Vet"
+                     Clicked="btnVetRegistration_Clicked">
+        </ToolbarItem>
+
+        <ToolbarItem x:Name="user_list_toolbar"
+                     Text="Admin"
+                     Clicked="btnUserList_Clicked">
+        </ToolbarItem>
+
+        <ToolbarItem x:Name="logout_toolbar"
+                     Text="Logout"
+                     Clicked="btnLogout_Clicked">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <Label Text="Welcome to Pet Clinic!" FontSize="Large"/>
+        
+        <Image x:Name="petclinic_image" Source="petclinic.jpg" Aspect="AspectFit"/>
+    </StackLayout>
 </ContentPage>
