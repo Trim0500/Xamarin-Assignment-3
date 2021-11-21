@@ -46,10 +46,22 @@ namespace Assignment3.DB
             return (await client.Child(nameof(Pet) + "/" + key).OnceSingleAsync<Pet>());
         }
 
+        public async Task<List<Pet>> ReadByOwnerKey(string ownerKey)
+        {
+            return (await client.Child(nameof(Pet)).OnceAsync<Pet>()).Select(item => new Pet
+            {
+                key = item.Key,
+                ownerId = item.Object.ownerId,
+                name = item.Object.name,
+                birthDate = item.Object.birthDate,
+                type = item.Object.type
+            }).Where(p => p.ownerId == ownerKey).ToList<Pet>();
+        }
+
         public async Task<bool> Update(Pet pet)
         {
 
-            await client.Child(nameof(Vet) + "/" + pet.key).PutAsync(JsonConvert.SerializeObject(pet));
+            await client.Child(nameof(Pet) + "/" + pet.key).PutAsync(JsonConvert.SerializeObject(pet));
 
             return true;
 

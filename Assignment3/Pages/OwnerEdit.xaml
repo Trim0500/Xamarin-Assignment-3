@@ -2,11 +2,51 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Assignment3.Pages.OwnerEdit">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="add_toolbar"
+                     Text="Add Pet"
+                     Clicked="add_toolbar_Clicked">
+        </ToolbarItem>
+
+        <ToolbarItem x:Name="edit_toolbar"
+                     Text="Update Owner"
+                     Clicked="update_info_btn_Clicked">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Entry x:Name="txtOwnerKey"
+                            Placeholder="{Binding key}"
+                            FontSize="Large"/>
+                
+                <Entry x:Name="txtFirstName"
+                            Placeholder="{Binding firstName}"
+                            FontSize="Large"/>
+                
+                <Entry x:Name="txtLastName"
+                            Placeholder="{Binding lastName}"
+                            FontSize="Large"/>
+
+                <Image x:Name="img_pet_1">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="pet1_tap_Tapped" NumberOfTapsRequired="1" CommandParameter="{Binding pet1}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Image x:Name="img_pet_2">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="pet2_tap_Tapped" NumberOfTapsRequired="1" CommandParameter="{Binding pet2}" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Button x:Name="btnBack"
+                            Text="Back"
+                            Font="large"
+                            BackgroundColor="LightBlue"
+                            Clicked="btnBack_Clicked"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

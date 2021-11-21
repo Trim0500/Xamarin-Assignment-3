@@ -41,7 +41,7 @@ namespace Assignment3.Pages
 
         async void btnPetRegistration_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new PetRegistration());
+            await Navigation.PushAsync(new OwnerEdit());
         }
 
         async void btnVetRegistration_Clicked(object sender, EventArgs e)

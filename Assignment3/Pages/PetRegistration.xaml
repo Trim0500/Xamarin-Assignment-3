@@ -2,11 +2,75 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Assignment3.Pages.PetRegistration">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="add_toolbar"
+                     Text="Add"
+                     Clicked="add_toolbar_Clicked">
+        </ToolbarItem>
+        
+        <ToolbarItem x:Name="edit_toolbar"
+                     Text="edit"
+                     Clicked="edit_toolbar_Clicked">
+        </ToolbarItem>
+        
+        <ToolbarItem x:Name="delete_toolbar"
+                     Text="edit"
+                     Clicked="delete_toolbar_Clicked">
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+            <Label x:Name="pet_entry_lbl" Text="Pet Entry"
+                   FontSize="Large"/>
+
+            <Entry x:Name="pet_id_edit"
+                   Placeholder="Enter the pet id (update)"/>
+
+            <Entry x:Name="name_edit"
+                   Placeholder="Enter your first name"/>
+
+            <Entry x:Name="type_edit"
+                   Placeholder="Enter your last name"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="birth_date_lbl" Text="Enter a Birth Date Here:" FontSize="Medium" TextColor="Blue" Margin="10" Grid.Row="0" Grid.Column="0"/>
+                <DatePicker x:Name="birth_date_picker" FontSize="Medium" Margin="10" Grid.Row="1" Grid.Column="0" />
+            </Grid>
+
+            <Button x:Name="add_btn"
+                        Text="Add Pet"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="add_toolbar_Clicked"/>
+
+            <Button x:Name="edit_btn"
+                        Text="Edit Pet"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="edit_toolbar_Clicked"/>
+
+            <Button x:Name="delete_btn"
+                        Text="Delete Pet"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="delete_toolbar_Clicked"/>
+
+            <Button x:Name="back_btn"
+                        Text="Back"
+                        Font="large"
+                        BackgroundColor="LightBlue"
+                        Clicked="back_btn_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

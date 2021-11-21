@@ -34,7 +34,7 @@ namespace Assignment3.DB
             return (await client.Child(nameof(Owner)).OnceAsync<Owner>()).Select(item => new Owner
             {
                 key = item.Key,
-                ownerId = item.Object.ownerId,
+                userId = item.Object.userId,
                 firstName = item.Object.firstName,
                 lastName = item.Object.lastName,
                 pet1 = item.Object.pet1,
@@ -45,6 +45,11 @@ namespace Assignment3.DB
         public async Task<Owner> ReadById(string key)
         {
             return await client.Child(nameof(Owner) + "/" + key).OnceSingleAsync<Owner>();
+        }
+
+        public async Task<Owner> ReadByUserKey(string userKey)
+        {
+            return await client.Child(nameof(Owner) + "/" + userKey).OnceSingleAsync<Owner>();
         }
 
         public async Task<bool> Update(Owner owner)

@@ -162,7 +162,7 @@ namespace Assignment3.Pages
 
                     await ownerDB.Create(new Owner
                     {
-                        ownerId = ownerUser.key,
+                        userId = ownerUser.key,
                         firstName = fName_edit.Text,
                         lastName = lName_edit.Text
                     });
